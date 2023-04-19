@@ -9,3 +9,5 @@ export { default as Projects } from './Projects';
 export { default as SinglePost } from './SinglePost';
 export { default as SkillCard } from './SkillCard';
 export { default as ThemeTemplate } from './ThemeTemplate';
+export { default as AppErrorFallback } from './AppErrorFallback';
+export { default as Section } from './Section';
