@@ -41,11 +41,9 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
                     );
                 }}
             >
-                {Layout(
-                    <AppProvider>
-                        <Component {...pageProps} />
-                    </AppProvider>,
-                )}
+                <AppProvider>
+                    {Layout(<Component {...pageProps} />)}
+                </AppProvider>
             </ErrorBoundary>
         </Fragment>
     );

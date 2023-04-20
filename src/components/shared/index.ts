@@ -1,4 +1,4 @@
-export { default as BlastAnimation } from './BlastAnimation';
+export { default as TextSpan } from './TextSpan';
 export { default as Button } from './Button';
 export { default as BaseButton } from './BaseButton';
 export { default as BlogCompo } from './BlogCompo';
@@ -11,3 +11,4 @@ export { default as SkillCard } from './SkillCard';
 export { default as ThemeTemplate } from './ThemeTemplate';
 export { default as AppErrorFallback } from './AppErrorFallback';
 export { default as Section } from './Section';
+export { default as ClientOnly } from './ClientOnly';

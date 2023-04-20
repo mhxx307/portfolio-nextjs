@@ -9,8 +9,8 @@ interface HeadProps {
 
 export default function Head(props: HeadProps) {
     const {
-        title = 'La Võ Minh Quân',
-        description = 'La Võ Minh Quân',
+        title = 'La Võ Minh Quân - Web developer',
+        description = 'La Võ Minh Quân - Web developer, Frontend developer, Backend developer, Fullstack developer, Mobile app developer',
         image,
     } = props;
 

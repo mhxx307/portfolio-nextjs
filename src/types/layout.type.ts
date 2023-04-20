@@ -4,7 +4,7 @@ import { ReactElement, ReactNode } from 'react';
 
 export interface BaseLayoutProps {
     children: ReactNode;
-    showSidebar: boolean;
+    showSidebar?: boolean;
 }
 
 export type NextPageWithLayout = NextPage & {

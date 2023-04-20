@@ -9,11 +9,11 @@ function Sidebar({ isOpen }: { isOpen: boolean }) {
     return (
         <aside
             className={classNames(
-                'aside__sidebar xl:transition__350 fixed left-0 top-0 z-30 h-full w-44 bg-sideBarBg xl:h-0 xl:w-full xl:overflow-hidden',
+                'aside__sidebar mxl:transition__350 fixed left-0 top-0 z-30 h-full w-44 bg-sideBarBg mxl:h-0 mxl:w-full mxl:overflow-hidden',
                 { '-translate-x-full': !isOpen },
             )}
         >
-            <div className="m-auto flex min-h-[90vh] w-[80%] flex-col justify-between overflow-y-auto lg:text-center">
+            <div className="m-auto flex min-h-[90vh] w-[80%] flex-col justify-between overflow-y-auto mlg:text-center">
                 <Link
                     href={path.home}
                     className="z-20 flex flex-col items-center justify-center pt-8 leading-10"
@@ -21,10 +21,10 @@ function Sidebar({ isOpen }: { isOpen: boolean }) {
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 171 210"
-                        className="h-auto w-[60px] fill-[#cc6c06]"
+                        className="h-auto w-[60px] fill-[cyan]"
                     >
                         <path
-                            className="fill-[#cc6c06]"
+                            className="fill-[cyan]"
                             d="M171 209.194C159.166 128.482 123.848 68.1928 79.4896 55.1237C39.9765 68.9721 10.4845 132.104 0 210C24.4381 165.9 53.1053 124.32 80.4167 105.975C115.428 124.605 139.927 163.164 171 209.194Z"
                         />
                         <path
@@ -43,7 +43,7 @@ function Sidebar({ isOpen }: { isOpen: boolean }) {
                         return (
                             <li
                                 key={index}
-                                className="relative leading-7 lg:font-bold lg:leading-[2.8]"
+                                className="relative leading-7 mlg:font-bold mlg:leading-[2.8]"
                             >
                                 <Link
                                     href={url}
@@ -55,8 +55,8 @@ function Sidebar({ isOpen }: { isOpen: boolean }) {
                                         },
                                     )}
                                 >
-                                    <Icon className="transition__linear mr-[15px] text-[25px] text-colorTem hover:text-anchor lg:hidden" />
-                                    <span className="hover:text-colorTem">
+                                    <Icon className="transition__linear mr-[15px] text-[25px] text-colorTem hover:text-anchor mlg:hidden" />
+                                    <span className="transition-colors hover:text-colorTem">
                                         {text}
                                     </span>
                                 </Link>
@@ -66,12 +66,12 @@ function Sidebar({ isOpen }: { isOpen: boolean }) {
                 </ul>
 
                 {/* social icon */}
-                <div className="flex flex-wrap gap-2 xl:text-center">
+                <div className="flex flex-wrap gap-2 mxl:text-center">
                     {socialIcons.map((item, index) => {
                         const { icon: Icon, url } = item;
                         return (
                             <a href={url} key={index}>
-                                <Icon className="transition__linear lg:hover:animation__rubberBand mr-[15px] text-[15px] text-colorTem hover:text-anchor" />
+                                <Icon className="transition__linear mlg:hover:animation__rubberBand mr-[15px] text-[15px] text-colorTem hover:text-anchor" />
                             </a>
                         );
                     })}

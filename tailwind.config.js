@@ -1,9 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+    darkMode: 'class',
     content: [
         './src/pages/**/*.{js,ts,jsx,tsx}',
         './src/components/**/*.{js,ts,jsx,tsx}',
         './src/app/**/*.{js,ts,jsx,tsx}',
+        './src/features/**/*.{js,ts,jsx,tsx}',
     ],
     theme: {
         extend: {
@@ -16,7 +18,7 @@ module.exports = {
                 primaryBg: '#252423',
                 randomColor: '#2d2b2b',
                 primary: '#797878',
-                colorTem: '#cc6c06',
+                colorTem: 'cyan', //#cc6c06
                 secondary: '#000',
                 anchor: '#adabab',
                 sideBarBg: '#222222',
@@ -31,16 +33,28 @@ module.exports = {
             },
         },
         screens: {
-            '2xl': { max: '1535px' },
+            '4xl': { min: '2000px' },
+            m4xl: { max: '1900px' },
+            m2xl: { max: '1535px' },
             // => @media (max-width: 1535px) { ... }
-            xl: { max: '1200px' },
+            mxl: { max: '1200px' },
             // => @media (max-width: 1279px) { ... }
-            lg: { max: '1024px' },
+            mlg: { max: '1024px' },
             // => @media (max-width: 1023px) { ... }
-            md: { max: '767px' },
+            mmd: { max: '768px' },
             // => @media (max-width: 767px) { ... }
-            sm: { max: '639px' },
+            msm: { max: '639px' },
             // => @media (max-width: 639px) { ... }
+            mss: { max: '450px' },
+            xs: '480px',
+            ss: '640px',
+            sm: '768px',
+            md: '1024px',
+            lg: '1280px',
+            xl: '1536px',
+        },
+        fontFamily: {
+            helvetica: ['Helvetica Neue', 'sans-serif'],
         },
     },
     plugins: [],
