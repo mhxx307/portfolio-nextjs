@@ -85,6 +85,7 @@ const socialIcons = [
         url: 'https://www.linkedin.com/in/almarex/',
     },
 ];
+
 // skills card
 const skillSet = [
     {

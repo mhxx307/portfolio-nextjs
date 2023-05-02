@@ -3,11 +3,11 @@ import { motion } from 'framer-motion';
 
 const spanVariants = {
     visible: { y: 0, scaleY: 1 },
-    hover: {
-        y: [-1, -2, -2.8, 0.9, 0],
-        scaleY: [1, 1.3, 0.8, 1, 1.2],
-        color: 'cyan',
-    },
+    // hover: {
+    //     y: [-1, -2, -2.8, 0.9, 0],
+    //     scaleY: [1, 1.3, 0.8, 1, 1.2],
+    //     color: 'cyan',
+    // },
 };
 
 const itemRotate = {

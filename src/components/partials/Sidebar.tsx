@@ -9,7 +9,7 @@ function Sidebar({ isOpen }: { isOpen: boolean }) {
     return (
         <aside
             className={classNames(
-                'aside__sidebar mxl:transition__350 fixed left-0 top-0 z-30 h-full w-44 bg-sideBarBg mxl:h-0 mxl:w-full mxl:overflow-hidden',
+                'aside__sidebar mxl:transition__350 fixed left-0 top-0 z-30 h-full w-40 bg-white dark:bg-sideBarBg mxl:h-0 mxl:w-full mxl:overflow-hidden',
                 { '-translate-x-full': !isOpen },
             )}
         >
@@ -52,11 +52,12 @@ function Sidebar({ isOpen }: { isOpen: boolean }) {
                                         'transition__250 flex items-center',
                                         {
                                             'text-colorTem': isActive,
+                                            'text-[#5a6072]': !isActive,
                                         },
                                     )}
                                 >
                                     <Icon className="transition__linear mr-[15px] text-[25px] text-colorTem hover:text-anchor mlg:hidden" />
-                                    <span className="transition-colors hover:text-colorTem">
+                                    <span className="transition-colors hover:text-colorTem ">
                                         {text}
                                     </span>
                                 </Link>

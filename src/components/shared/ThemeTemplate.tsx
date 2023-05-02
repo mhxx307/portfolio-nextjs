@@ -12,7 +12,7 @@ const ThemeTemplate = () => {
     return (
         <>
             <button
-                className="fixed bottom-[30px] right-[40px] z-50 cursor-pointer bg-primaryBg p-[10px] shadow-shadowCustom mss:p-[15px]"
+                className="fixed bottom-[30px] right-[40px] z-50 cursor-pointer bg-white p-[10px] shadow-shadowCustom dark:bg-primaryBg mss:p-[15px]"
                 onClick={openTemplate}
                 style={{
                     borderRadius: '50% 50% 0',
@@ -23,7 +23,7 @@ const ThemeTemplate = () => {
 
             <div
                 className={classNames(
-                    'transition__350__2 fixed bottom-[230px] right-0 z-40 flex h-auto w-auto flex-col bg-themeWrapperBg shadow-shadowCustom mss:p-[7px]',
+                    'transition__350__2 fixed bottom-[230px] right-0 z-40 flex h-auto w-auto flex-col bg-white shadow-shadowCustom dark:bg-themeWrapperBg mss:p-[7px]',
                     {
                         'translate-x-[0%]': isTemplateOpen,
                         'translate-x-[110%]': !isTemplateOpen,
@@ -65,6 +65,29 @@ const ThemeTemplate = () => {
                         onClick={() => setIsOn(true)}
                     >
                         <BsMoonStars className="transition__02__1 fill-colorTem group-hover:rotate-[360deg]" />
+                    </button>
+                </div>
+
+                <div className="flex items-center justify-center space-x-4 pb-[60px]">
+                    <button
+                        className={`group rounded-md p-2 text-[12px] shadow-shadowCustom ${
+                            !isOn
+                                ? 'border-[1px] border-solid border-colorTem'
+                                : ''
+                        }`}
+                        onClick={() => setIsOn(false)}
+                    >
+                        EN
+                    </button>
+                    <button
+                        className={`group rounded-md p-2 text-[12px] shadow-shadowCustom ${
+                            isOn
+                                ? 'border-[1px] border-solid border-colorTem'
+                                : ''
+                        }`}
+                        onClick={() => setIsOn(true)}
+                    >
+                        VN
                     </button>
                 </div>
             </div>

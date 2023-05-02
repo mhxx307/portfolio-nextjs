@@ -1,19 +1,16 @@
-import { useState, useEffect } from 'react';
-import { TextSpan } from '@/components/shared';
 import { path } from '@/constants/path';
 import Link from 'next/link';
+import { useState, useEffect } from 'react';
+import { TextSpan } from '@/components/shared';
 
 function Header() {
-    const [showFirstText, setShowFirstText] = useState(false);
     const [showSecondText, setShowSecondText] = useState(false);
     const [showThirdText, setShowThirdText] = useState(false);
 
     useEffect(() => {
-        const firstTimeout = setTimeout(() => setShowFirstText(true), 100);
         const secondTimeout = setTimeout(() => setShowSecondText(true), 1000);
         const thirdTimeout = setTimeout(() => setShowThirdText(true), 1500);
         return () => {
-            clearTimeout(firstTimeout);
             clearTimeout(secondTimeout);
             clearTimeout(thirdTimeout);
         };
@@ -22,20 +19,16 @@ function Header() {
     return (
         <section className="header__container section__padding font-sans relative flex min-h-[100vh] items-center">
             <main className="intro-page">
-                <h1 className="font-helvetica text-2xl font-bold text-white 4xl:text-[10rem] 4xl:leading-[9rem] 4xl:tracking-[-4px] m4xl:text-8xl mlg:text-7xl mmd:text-5xl mss:text-4xl">
+                <h1 className="font-helvetica text-2xl font-bold text-[#5a6072] dark:text-white 4xl:text-[10rem] 4xl:leading-[9rem] 4xl:tracking-[-4px] m4xl:text-8xl mlg:text-7xl mmd:text-5xl mss:text-4xl">
                     Hi, <br />{' '}
-                    {showFirstText && (
-                        <TextSpan
-                            text="Mình là "
-                            className="inline"
-                            animation="rotate"
-                        />
-                    )}{' '}
+                    <TextSpan
+                        text="Mình là"
+                        className="inline"
+                        animation="rotate"
+                    />{' '}
+                    <span className="text-colorTem">Q</span>
                     {showSecondText && (
-                        <TextSpan
-                            text="Quân,"
-                            className="inline text-colorTem"
-                        />
+                        <TextSpan text="uân," className="inline" />
                     )}{' '}
                     <br />{' '}
                     {showThirdText && <TextSpan text="một lập trình viên" />}
@@ -45,7 +38,7 @@ function Header() {
                         </span>
                     )}
                 </h1>
-                <p className="animation__fadeIn mx-0 my-[30px] text-[1em] 4xl:text-2xl m4xl:text-xl mlg:text-[0.9rem] mmd:text-[0.875rem] mss:text-[0.87em]">
+                <p className="animation__fadeIn mx-0 my-[30px] text-[1em] text-black dark:text-white 4xl:text-2xl m4xl:text-xl mlg:text-[0.9rem] mmd:text-[0.875rem] mss:text-[0.87em]">
                     Front-end developer
                 </p>
                 <Link
