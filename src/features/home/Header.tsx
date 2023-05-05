@@ -19,7 +19,7 @@ function Header() {
     return (
         <section className="section__padding relative flex min-h-[100vh] items-center">
             <main className="intro-page">
-                <h1 className="font-helvetica text-2xl font-bold text-[#5a6072] dark:text-white 4xl:text-[10rem] 4xl:leading-[9rem] 4xl:tracking-[-4px] m4xl:text-8xl mlg:text-7xl mmd:text-5xl mss:text-4xl">
+                <h1 className="relative font-helvetica text-2xl font-bold text-[#5a6072] before:absolute before:left-[-2rem] before:mt-[-1rem] before:font-belle before:text-[18px] before:text-[#515152] before:content-['<h1>'] after:absolute after:right-0 after:font-belle after:text-[18px] after:text-[#515152] after:content-['<h1>'] dark:text-white 4xl:text-[10rem] 4xl:leading-[9rem]  4xl:tracking-[-4px] m4xl:text-8xl mlg:text-7xl mmd:text-5xl mss:text-4xl">
                     Hi, <br />{' '}
                     <TextSpan
                         text="Mình là"
@@ -38,7 +38,7 @@ function Header() {
                         </span>
                     )}
                 </h1>
-                <p className="animation__fadeIn mx-0 my-[30px] text-[1em] text-black dark:text-white 4xl:text-2xl m4xl:text-xl mlg:text-[0.9rem] mmd:text-[0.875rem] mss:text-[0.87em]">
+                <p className="animation__fadeIn relative mx-0 my-[30px] text-[1em] tracking-[3px] text-black before:absolute before:left-[-2rem] before:mt-[-1rem] before:font-belle before:text-[18px] before:text-[#515152] before:content-['<p>'] after:absolute  after:bottom-[-2rem] after:left-[-2rem] after:font-belle after:text-[18px] after:text-[#515152] after:content-['<p>'] dark:text-anchor 4xl:text-2xl m4xl:text-[1rem] mlg:text-[0.9rem] mmd:text-[0.875rem] mss:text-[0.87em]">
                     Front-end developer
                 </p>
                 <Link

@@ -59,5 +59,5 @@ module.exports = {
             belle: ['La Belle Aurore', 'serif'],
         },
     },
-    plugins: [require('@tailwindcss/line-clamp')],
+    plugins: [],
 };

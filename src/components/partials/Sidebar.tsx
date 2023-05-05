@@ -72,7 +72,7 @@ function Sidebar({ isOpen }: { isOpen: boolean }) {
                         const { icon: Icon, url } = item;
                         return (
                             <a href={url} key={index}>
-                                <Icon className="transition__linear mlg:hover:animation__rubberBand mr-[15px] text-[15px] text-colorTem hover:text-anchor" />
+                                <Icon className="transition__linear mlg:hover:animation__rubberBand mr-[15px] text-[15px] text-anchor hover:text-colorTem" />
                             </a>
                         );
                     })}

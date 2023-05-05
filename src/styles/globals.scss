@@ -140,10 +140,10 @@ a {
 
 .section__article {
     height: auto;
-    background-color: var(--primary-bg);
     box-shadow: var(--box-shadow);
     z-index: 1;
     animation: fadeInUp 1s linear;
+    @apply bg-white dark:bg-primaryBg;
 }
 
 /* responsive and dynamic padding styles */

@@ -1,14 +1,16 @@
-import { BlogType } from '@/data/blogData';
 import Image from 'next/image';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
+import { Post } from '@/types/post';
+import Link from 'next/link';
+import { path } from '@/constants/path';
 
 interface Props {
-    postItem: BlogType;
+    postItem: Post;
 }
 
 function SinglePost({ postItem }: Props) {
-    const { title, brief, coverImage, url } = postItem;
+    const { title, brief, coverImage, slug } = postItem;
 
     return (
         <article className="section__article">
@@ -21,16 +23,21 @@ function SinglePost({ postItem }: Props) {
             />
             <div className="p-4">
                 <Tippy content={<span>{title}</span>}>
-                    <h2 className="cursor-pointer truncate hover:underline">
-                        {title}
-                    </h2>
+                    <Link href={`${path.blog}/${slug}`}>
+                        <h2 className="cursor-pointer truncate hover:underline">
+                            {title}
+                        </h2>
+                    </Link>
                 </Tippy>
 
                 <p className="mt-4 line-clamp-3">{brief}</p>
                 <Tippy content={<span>{title}</span>}>
-                    <a className="text-colorTem" href={url}>
+                    <Link
+                        className="text-colorTem"
+                        href={`${path.blog}/${slug}`}
+                    >
                         Read more
-                    </a>
+                    </Link>
                 </Tippy>
             </div>
         </article>
