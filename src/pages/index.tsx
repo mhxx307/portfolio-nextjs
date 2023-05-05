@@ -1,15 +1,16 @@
-import { ClientOnly, Head } from '@/components/shared';
+/* eslint-disable no-undef */
+import { Head } from '@/components/shared';
 import { Header } from '@/features/home';
-import About from './about';
-import ProjectPage from './project';
+import '../features/home/hovertree';
 
 export default function Home() {
     return (
-        <ClientOnly>
+        <>
             <Head title="La Võ Minh Quân - Web developer" />
-            <Header />
-            <About />
-            <ProjectPage />
-        </ClientOnly>
+            <div className="relative h-screen w-full">
+                <canvas id="canvas"></canvas>
+                <Header />
+            </div>
+        </>
     );
 }

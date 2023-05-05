@@ -1,7 +1,6 @@
 import { Fade, TextSpan } from '@/components/shared';
 import { projects } from '@/data/project';
 import { ProjectCard } from '@/features/project';
-import React from 'react';
 
 function ProjectPage() {
     return (

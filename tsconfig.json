@@ -23,7 +23,10 @@
         "**/*.ts",
         "**/*.tsx",
         "src/data/data.js",
-        "src/data/data.js"
+        "src/data/data.js",
+        "src/pages/index.tsx",
+        "src/pages/test.js",
+        "src/components/shared/Canvas.js"
     ],
     "exclude": ["node_modules"]
 }

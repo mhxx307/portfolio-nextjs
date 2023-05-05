@@ -6,13 +6,13 @@ function About() {
         <div className="section__padding grid grid-cols-1">
             <div className="fake-big">About</div>
             <article className="section-about-description grid grid-cols-12 pt-[100px]">
-                <div className="col-span-5">
+                <div className="col-span-12 md:col-span-5">
                     <h2
                         aria-label="About and skills"
                         className="font-helvetica text-2xl font-bold dark:text-white m4xl:text-6xl mlg:text-5xl mmd:text-4xl mss:text-3xl"
                     >
                         <TextSpan
-                            text="About & skill"
+                            text="Mình là ai?"
                             className="text-colorTem"
                         />
                     </h2>

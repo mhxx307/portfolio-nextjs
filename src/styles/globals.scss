@@ -34,7 +34,7 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
         'Oxygen', 'Ubuntu', 'Helvetica Neue', Arial, sans-serif;
     overflow-x: hidden;
-    @apply bg-white text-black dark:bg-primaryBg dark:text-white;
+    @apply bg-lightBg text-black dark:bg-primaryBg dark:text-white;
 }
 
 /* styling the  scrollbar */
@@ -138,6 +138,14 @@ a {
     background-color: var(--typical-color);
 }
 
+.section__article {
+    height: auto;
+    background-color: var(--primary-bg);
+    box-shadow: var(--box-shadow);
+    z-index: 1;
+    animation: fadeInUp 1s linear;
+}
+
 /* responsive and dynamic padding styles */
 @media screen and (min-width: 1200px) {
     .section__padding {
@@ -232,4 +240,14 @@ a {
         transform: skewX(-10deg);
         transition: all 0.3s linear;
     }
+}
+
+// hover tree
+#canvas {
+    position: absolute;
+    left: 0;
+    width: 1366;
+    max-width: 100%;
+    height: 277;
+    z-index: -1;
 }

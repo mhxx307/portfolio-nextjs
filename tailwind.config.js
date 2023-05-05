@@ -30,6 +30,7 @@ module.exports = {
             },
             boxShadow: {
                 shadowCustom: '0 0 15px 0px #0808084c',
+                shadowCustom2: '0 0 0px 1000px #2b2b2b inset',
             },
         },
         screens: {
@@ -55,7 +56,8 @@ module.exports = {
         },
         fontFamily: {
             helvetica: ['Helvetica Neue', 'sans-serif'],
+            belle: ['La Belle Aurore', 'serif'],
         },
     },
-    plugins: [],
+    plugins: [require('@tailwindcss/line-clamp')],
 };

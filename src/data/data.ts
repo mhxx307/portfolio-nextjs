@@ -9,18 +9,12 @@ import {
 } from 'react-icons/bs';
 
 import { RiContactsLine, RiReactjsLine } from 'react-icons/ri';
-import {
-    SiFuturelearn,
-    SiSass,
-    SiJquery,
-    SiExpress,
-    SiRedux,
-} from 'react-icons/si';
+import { SiSass, SiJquery, SiExpress, SiRedux } from 'react-icons/si';
 
 import { GrGithub, GrTwitter, GrInstagram } from 'react-icons/gr';
 import { AiFillHtml5 } from 'react-icons/ai';
 import { DiCss3, DiMongodb } from 'react-icons/di';
-import { IoLogoJavascript, IoLogoGameControllerB } from 'react-icons/io';
+import { IoLogoJavascript } from 'react-icons/io';
 import { FaNodeJs, FaGit } from 'react-icons/fa';
 import { path } from '@/constants/path';
 
@@ -49,16 +43,6 @@ const sideBarMenu = [
         text: 'Contacts',
         icon: RiContactsLine,
         url: path.contact,
-    },
-    {
-        text: 'Tutorials',
-        icon: SiFuturelearn,
-        url: path.tutorial,
-    },
-    {
-        text: 'Gaming',
-        icon: IoLogoGameControllerB,
-        url: path.gaming,
     },
 ];
 

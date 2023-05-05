@@ -4,6 +4,4 @@ export const path = {
     project: '/project',
     blog: '/blog',
     contact: '/contact',
-    tutorial: '/tutorial',
-    gaming: '/gaming',
 };

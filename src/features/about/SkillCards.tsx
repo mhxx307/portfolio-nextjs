@@ -3,7 +3,7 @@ import { skillSet } from '@/data/data';
 
 function SkillCards() {
     return (
-        <div className="mt-[50px] grid grid-cols-5 gap-4 ss:grid-cols-2 sm:grid-cols-3 md:grid-cols-4">
+        <div className="my-[50px] grid grid-cols-2 gap-4 ss:grid-cols-3 sm:grid-cols-4 md:grid-cols-5">
             {skillSet.map((item, index) => (
                 <Fade
                     direction="bottom"

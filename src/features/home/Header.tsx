@@ -17,7 +17,7 @@ function Header() {
     }, []);
 
     return (
-        <section className="header__container section__padding font-sans relative flex min-h-[100vh] items-center">
+        <section className="section__padding relative flex min-h-[100vh] items-center">
             <main className="intro-page">
                 <h1 className="font-helvetica text-2xl font-bold text-[#5a6072] dark:text-white 4xl:text-[10rem] 4xl:leading-[9rem] 4xl:tracking-[-4px] m4xl:text-8xl mlg:text-7xl mmd:text-5xl mss:text-4xl">
                     Hi, <br />{' '}

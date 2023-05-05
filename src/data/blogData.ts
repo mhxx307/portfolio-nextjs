@@ -68,3 +68,14 @@ export const blogData = [
         url: 'https://almarexwebdev.hashnode.dev/9-tips-to-boost-your-coding-career',
     },
 ];
+
+export interface BlogType {
+    _id: string;
+    title: string;
+    brief: string;
+    slug: string;
+    dateAdded: string;
+    totalReactions: number;
+    coverImage: string;
+    url: string;
+}

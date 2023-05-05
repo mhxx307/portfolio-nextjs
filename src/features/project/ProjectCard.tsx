@@ -14,8 +14,8 @@ function ProjectCard({ project }: Props) {
                     src={project.imgUrl}
                     alt={project.name}
                     className="h-full w-full object-cover"
-                    width={100}
-                    height={100}
+                    width={500}
+                    height={500}
                 />
                 <div className="absolute left-0 top-0 h-full w-full translate-y-full bg-[#1c0800dd] text-center transition-all duration-[250ms] group-hover:translate-y-0">
                     <p className="mt-[20px] text-base text-white">
@@ -25,19 +25,19 @@ function ProjectCard({ project }: Props) {
                         {project.desc}
                     </p>
                     <div className="bottom-[10px] mt-[50px] text-white">
-                        <h2 className="mb-[0.5rem] text-xl">Built with</h2>
+                        <h2 className="text-xl">Built with</h2>
                         <span className="text-xs">{project.stack}</span>
                     </div>
-                    <div className="absolute bottom-[40px] left-[15px]">
+                    <div className="absolute bottom-[60px] left-[15px]">
                         <a
                             href={project.gitHubUrl.url}
-                            className="mb-[3px] block text-[30px] text-white"
+                            className="mb-[3px] block text-[25px] text-white"
                         >
                             <project.gitHubUrl.icon />
                         </a>
                         <a
                             href={project.website.url}
-                            className="block text-[30px] text-white"
+                            className="block text-[25px] text-white"
                         >
                             <project.website.icon />
                         </a>
