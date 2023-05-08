@@ -11,6 +11,7 @@ export interface Post {
     slug: string;
     publishedAt: string;
     tags: string[];
+    categories: string[];
     brief: string;
     coverImage: string;
     author?: Author;

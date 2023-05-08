@@ -7,6 +7,7 @@ const nextConfig = {
             'res.cloudinary.com',
             'cdn.hashnode.com',
             'images.unsplash.com',
+            'sp-ao.shortpixel.ai',
         ],
     },
 };

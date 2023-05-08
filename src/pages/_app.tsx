@@ -1,6 +1,7 @@
 import '@/styles/globals.scss';
 import '@/styles/contact.scss';
 import 'react-toastify/dist/ReactToastify.css';
+import '@/styles/prism.css';
 
 import { Fragment, useState } from 'react';
 import { ErrorBoundary } from 'react-error-boundary';

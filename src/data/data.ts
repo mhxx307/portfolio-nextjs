@@ -50,23 +50,15 @@ const sideBarMenu = [
 const socialIcons = [
     {
         icon: GrGithub,
-        url: 'https://github.com/Almarex-Web-Dev ',
+        url: 'https://github.com/mhxx307',
     },
     {
         icon: FiYoutube,
-        url: 'https://www.youtube.com/c/AlmarexWebDev',
-    },
-    {
-        icon: GrTwitter,
-        url: 'https://twitter.com/almarexwebdev',
-    },
-    {
-        icon: GrInstagram,
-        url: 'https://www.instagram.com/almarexwebdev1/',
+        url: 'https://youtube.com/@moona7095',
     },
     {
         icon: FiLinkedin,
-        url: 'https://www.linkedin.com/in/almarex/',
+        url: 'https://www.linkedin.com/in/minhquan-lavo/',
     },
 ];
 

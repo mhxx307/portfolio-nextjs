@@ -6,6 +6,7 @@ author_title: Sinh viên trường đại học Công Nghiệp, Freelancer^
 author_url: https://github.com/mhxx307
 author_image_url: https://minhquan-blogapp.netlify.app/static/media/profile.f66bd9b4689d8e2950b5.png
 image: https://cdn.hashnode.com/res/hashnode/image/upload/v1654762243883/Y_-VCaXcR.jpg
+categories: [IT, ReactJS]
 tags: [reactjs, lộ trình học reactjs cơ bản]
 ---
 
@@ -79,7 +80,7 @@ Giờ học code ReactJS thôi hehe 😎
 -   Đây là một nội dung OPTIONAL. Không có Type Checking, code của bạn vẫn chạy được bình thường.
 -   Thỉnh thoảng bạn thấy code như vầy:
 
-```js
+```js[data-line="2,4"][class="line-numbers"]
 import PropTypes from 'prop-types';
 
 function Item() {

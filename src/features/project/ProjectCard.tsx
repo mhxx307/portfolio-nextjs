@@ -24,8 +24,8 @@ function ProjectCard({ project }: Props) {
                     <p className="m-auto w-[200px] text-center text-sm">
                         {project.desc}
                     </p>
-                    <div className="bottom-[10px] mt-[50px] text-white">
-                        <h2 className="text-xl">Built with</h2>
+                    <div className="bottom-[10px] mt-[30px] text-white">
+                        <h2 className="text-xl text-colorTem">Built with</h2>
                         <span className="text-xs">{project.stack}</span>
                     </div>
                     <div className="absolute bottom-[60px] left-[15px]">

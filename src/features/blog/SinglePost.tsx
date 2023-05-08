@@ -24,7 +24,7 @@ function SinglePost({ postItem }: Props) {
             <div className="p-4">
                 <Tippy content={<span>{title}</span>}>
                     <Link href={`${path.blog}/${slug}`}>
-                        <h2 className="cursor-pointer truncate hover:underline">
+                        <h2 className="cursor-pointer truncate text-sm font-normal text-colorTem hover:underline">
                             {title}
                         </h2>
                     </Link>

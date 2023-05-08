@@ -7,36 +7,109 @@ import remarkParse from 'remark-parse';
 import remarkRehype from 'remark-rehype';
 import rehypeDocument from 'rehype-document';
 import rehypeFormat from 'rehype-format';
+import remarkToc from 'remark-toc';
 import rehypeStringify from 'rehype-stringify';
-import { LogoAnimation } from '@/components/shared';
+import { path } from '@/constants/path';
+import Link from 'next/link';
+import { IoIosArrowRoundBack } from 'react-icons/io';
+import remarkPrism from 'remark-prism';
+import Script from 'next/script';
+import { categories } from '@/constants/post';
+import Image from 'next/image';
 
 interface Props {
     post: Post;
+    relatedPosts: Post[];
 }
 
-function BlogDetail({ post }: Props) {
+function BlogDetail({ post, relatedPosts }: Props) {
     if (!post) {
         return <div>No post</div>;
     }
 
     return (
         <div>
-            <header className="h-[100px] flex-col">
-                <LogoAnimation />
-                <button>back to home</button>
+            <header className="flex h-[100px] items-center">
+                <div className="h-full bg-black px-5">Q</div>
+                <Link
+                    href={path.blog}
+                    className="ml-10 flex items-center justify-center text-colorTem transition-colors hover:text-anchor"
+                >
+                    <IoIosArrowRoundBack />
+                    Back to blog
+                </Link>
             </header>
             <div className="grid grid-cols-12 gap-4">
                 <div className="col-span-1"></div>
-                <div className="col-span-8 border-l-[1px] border-r-[1px] border-t-[2px] border-solid border-[#3c3b3b] border-t-[#E4EE89] px-10 py-12">
-                    {post.title}
+                <div className="col-span-12 border-l-[1px] border-r-[1px] border-t-[2px] border-solid border-[#3c3b3b] border-t-[#E4EE89] px-10 py-12 md:col-span-8">
+                    <h1 className="relative mb-14 font-helvetica text-6xl font-bold text-[#5a6072] before:absolute before:left-[-2rem] before:mt-[-1rem] before:font-belle before:text-[18px] before:text-[#515152] before:content-['<h1>'] after:absolute after:left-[-2rem] after:top-32 after:font-belle after:text-[18px] after:text-[#515152]  after:content-['<h1>'] dark:text-white">
+                        {post.title}
+                    </h1>
+                    <Image
+                        src={post.coverImage}
+                        alt={post.title}
+                        className="mb-14 h-[300px] w-full object-cover"
+                        width={800}
+                        height={300}
+                    />
                     <div
                         dangerouslySetInnerHTML={{
                             __html: post.htmlContent || '',
                         }}
                     />
                 </div>
-                <div className="col-span-3">categories</div>
+                <div className="hidden md:col-span-3 md:block">
+                    <div>
+                        <h2 className="text-white">Thể loại:</h2>
+                        <ul className="pl-6">
+                            {categories.map((tag) => (
+                                <li key={tag} className="list-disc">
+                                    <Link
+                                        href={tag}
+                                        className="text-colorTem hover:underline"
+                                    >
+                                        {tag}
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                    <div className="mt-12">
+                        <h2 className="text-white">Tag:</h2>
+                        <ul className="pl-6">
+                            {post.tags.map((tag) => (
+                                <li key={tag} className="list-disc">
+                                    <Link
+                                        href={tag}
+                                        className="text-colorTem hover:underline"
+                                    >
+                                        {tag}
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+
+                    <div className="mt-12">
+                        <h2 className="text-white">Bài viết liên quan:</h2>
+                        <ul className="pl-6">
+                            {relatedPosts &&
+                                relatedPosts.map((post) => (
+                                    <li key={post.id} className="list-disc">
+                                        <Link
+                                            href={post.slug}
+                                            className="text-colorTem hover:underline"
+                                        >
+                                            {post.title}
+                                        </Link>
+                                    </li>
+                                ))}
+                        </ul>
+                    </div>
+                </div>
             </div>
+
+            <Script src="/prism.js" strategy="afterInteractive"></Script>
         </div>
     );
 }
@@ -57,7 +130,12 @@ export const getStaticProps: GetStaticProps<Props> = async (
     const postList = await getPostList();
     const slug = context.params?.slug;
     const post = postList.find((p) => p.slug === slug);
-    if (!slug || !post) {
+    const relatedPosts = postList.filter((p) => {
+        return p.tags.some((tag) => post?.tags.includes(tag));
+    });
+    console.log(relatedPosts);
+
+    if (!slug || !post || !relatedPosts) {
         return {
             notFound: true,
         };
@@ -65,6 +143,8 @@ export const getStaticProps: GetStaticProps<Props> = async (
 
     const file = await unified()
         .use(remarkParse)
+        .use(remarkToc, { heading: 'agenda.*' })
+        .use(remarkPrism)
         .use(remarkRehype)
         .use(rehypeDocument, { title: post.title })
         .use(rehypeFormat)
@@ -77,6 +157,7 @@ export const getStaticProps: GetStaticProps<Props> = async (
     return {
         props: {
             post: post,
+            relatedPosts: relatedPosts,
         },
     };
 };

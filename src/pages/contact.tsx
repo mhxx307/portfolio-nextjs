@@ -118,7 +118,10 @@ function Contact() {
                 onSubmit={onSubmit}
             >
                 <div>
-                    <h2 aria-label="contact me" className="contact__heading">
+                    <h2
+                        aria-label="contact me"
+                        className="contact__heading text-colorTem"
+                    >
                         <TextSpan text="Contact" />
                     </h2>
                     <Fade direction="bottom">

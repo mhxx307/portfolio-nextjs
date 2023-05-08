@@ -7,6 +7,7 @@ author_url: https://github.com/mhxx307
 author_image_url: https://minhquan-blogapp.netlify.app/static/media/profile.f66bd9b4689d8e2950b5.png
 image: https://cdn.hashnode.com/res/hashnode/image/upload/v1627379696146/6eosIRwfS.jpeg
 tags: [git, git trong dự án thực tế]
+categories: [IT]
 date: '2023-05-05'
 ---
 
@@ -21,11 +22,8 @@ Khi nhắc tới git có khá là nhiều lệnh khác nhau, tuy nhiên trong th
 
 ## 1. Lấy code mới nhất trên branch develop
 
-```sh
 git checkout develop # switch sang nhánh develop
-
 git pull # lấy code mới nhất về
-```
 
 ## 2. Làm task trực tiếp trên nhánh develop
 

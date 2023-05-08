@@ -30,6 +30,7 @@ export async function getPostList(): Promise<Post[]> {
                 avatarUrl: data.author_image_url,
             },
             publishedAt: new Date().toISOString(),
+            categories: data.categories,
         });
     }
 
