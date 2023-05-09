@@ -1,0 +1,11 @@
+{
+    "theme_color": "#1d1d1d",
+    "background_color": "#000000",
+    "display": "standalone",
+    "scope": "/",
+    "start_url": "/",
+    "name": "La Võ Minh Quân",
+    "short_name": "Quân La",
+    "description": "Trang web của La Võ Minh Quân | Trang web giới thiệu, chia sẻ bài viết kĩ thuật, kinh nghiệm, tài liệu, ... của La Võ Minh Quân",
+    "icons": []
+}
