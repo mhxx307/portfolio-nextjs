@@ -16,7 +16,7 @@ export default function Head(props: HeadProps) {
 
     const { asPath } = useRouter();
 
-    const WEBSITE_URL = 'http://localhost:3000';
+    const WEBSITE_URL = 'https://lavominhquan.com/';
 
     return (
         <NextHead>

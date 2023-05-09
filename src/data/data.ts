@@ -133,16 +133,6 @@ const skillSet = [
         spanText: 'Redux',
         url: 'https://redux.js.org/introduction/getting-started',
     },
-    {
-        icon: FiFigma,
-        spanText: 'Figma',
-        url: 'https://figma.com',
-    },
-    {
-        icon: BsGoogle,
-        spanText: 'Googling',
-        url: 'https://google.com',
-    },
 ];
 
 export { sideBarMenu, socialIcons, skillSet };

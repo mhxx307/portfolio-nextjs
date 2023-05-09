@@ -10,8 +10,8 @@ interface Props {
 
 function Blog({ posts }: Props) {
     return (
-        <Fade>
-            <section className="section__padding mx-0 my-[100px]">
+        <Fade className="py-[100px]">
+            <section className="section__padding mx-0">
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4">
                     {posts.length > 0 &&
                         posts.map((postItem) => {

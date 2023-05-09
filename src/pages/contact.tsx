@@ -1,4 +1,4 @@
-import { Fade, TextSpan } from '@/components/shared';
+import { Fade, Head, TextSpan } from '@/components/shared';
 import { useMemo, useRef, useState } from 'react';
 import { BsExclamationLg, BsPatchCheckFill } from 'react-icons/bs';
 import emailjs from '@emailjs/browser';
@@ -110,123 +110,135 @@ function Contact() {
     };
 
     return (
-        <section className="contact-section">
-            <div className="fake-big">@</div>
-            <form
-                ref={form}
-                className="contact-form pt-[100px]"
-                onSubmit={onSubmit}
-            >
-                <div>
-                    <h2
-                        aria-label="contact me"
-                        className="contact__heading text-colorTem"
-                    >
-                        <TextSpan text="Contact" />
-                    </h2>
-                    <Fade direction="bottom">
-                        <p>
-                            I’m interested in freelance opportunities and I am
-                            always ready to build projects at anytime, if you
-                            have any job offer for me, you could use the form
-                            below to react out to me.
-                        </p>
-                    </Fade>
-                </div>
-                <div className="relative mt-16 before:absolute before:left-[-2rem] before:mt-[-2rem] before:font-belle before:text-[18px] before:text-[#515152] before:content-['<form>']  after:absolute after:bottom-[-2rem] after:left-[-2rem] after:font-belle after:text-[18px] after:text-[#515152] after:content-['<form>']">
-                    <Fade direction="bottom">
-                        <div className="input-wrapper">
+        <>
+            <Head
+                title="Thông tin liên lạc của La Võ Minh Quân"
+                description="La Võ Minh Quân là một developer, blogger trẻ với nhiều tham vọng."
+            />
+            <section className="contact-section">
+                <div className="fake-big">@</div>
+                <form
+                    ref={form}
+                    className="contact-form pt-[100px]"
+                    onSubmit={onSubmit}
+                >
+                    <div>
+                        <h2
+                            aria-label="contact me"
+                            className="contact__heading text-colorTem"
+                        >
+                            <TextSpan text="Contact" />
+                        </h2>
+                        <Fade direction="bottom">
+                            <p>
+                                {/* I’m interested in freelance opportunities and I am
+                                always ready to build projects at anytime, if you
+                                have any job offer for me, you could use the form
+                                below to react out to me. */}
+                                Tôi quan tâm đến cơ hội làm việc tự do và tôi
+                                luôn sẵn sàng xây dựng các dự án bất cứ lúc nào,
+                                nếu bạn có bất kỳ cơ hội việc làm nào cho tôi,
+                                bạn có thể sử dụng biểu mẫu bên dưới để liên hệ
+                                với tôi.
+                            </p>
+                        </Fade>
+                    </div>
+                    <div className="relative mt-16 before:absolute before:left-[-2rem] before:mt-[-2rem] before:font-belle before:text-[18px] before:text-[#515152] before:content-['<form>']  after:absolute after:bottom-[-2rem] after:left-[-2rem] after:font-belle after:text-[18px] after:text-[#515152] after:content-['<form>']">
+                        <Fade direction="bottom">
+                            <div className="input-wrapper">
+                                <div className="form-input-group">
+                                    <input
+                                        autoComplete="false"
+                                        type="text"
+                                        placeholder="Name"
+                                        name="user_name"
+                                        value={validInput.name}
+                                        onChange={handleChange}
+                                    />
+                                    <span className="bg-colorTem"></span>
+                                    <BsExclamationLg className="exclamation" />
+                                    <BsPatchCheckFill className="checkCircle" />
+                                </div>
+
+                                <div className="form-input-group">
+                                    <input
+                                        autoComplete="false"
+                                        ref={emailRef}
+                                        type="email"
+                                        placeholder="Email"
+                                        name="user_email"
+                                        value={validInput.email}
+                                        onChange={handleChange}
+                                    />
+                                    <span className="bg-colorTem"></span>
+                                    <BsExclamationLg className="exclamation" />
+                                    <BsPatchCheckFill className="checkCircle" />
+                                </div>
+                            </div>
+                        </Fade>
+                        <Fade direction="bottom">
                             <div className="form-input-group">
                                 <input
                                     autoComplete="false"
                                     type="text"
-                                    placeholder="Name"
-                                    name="user_name"
-                                    value={validInput.name}
+                                    placeholder="Subject"
+                                    name="user_subject"
+                                    value={validInput.subject}
                                     onChange={handleChange}
                                 />
                                 <span className="bg-colorTem"></span>
                                 <BsExclamationLg className="exclamation" />
                                 <BsPatchCheckFill className="checkCircle" />
                             </div>
-
+                        </Fade>
+                        <Fade direction="bottom">
                             <div className="form-input-group">
-                                <input
+                                <textarea
+                                    id="messageArea"
                                     autoComplete="false"
-                                    ref={emailRef}
-                                    type="email"
-                                    placeholder="Email"
-                                    name="user_email"
-                                    value={validInput.email}
+                                    ref={TextAreaRef}
+                                    placeholder="Message"
+                                    name="message"
+                                    value={validInput.message}
                                     onChange={handleChange}
+                                    className="mb-[10px] h-[25vh] w-full border-none bg-[#2b2b2b] fill-[#8d8d8d] px-[20px] py-[10px] text-sm shadow-shadowCustom2 outline-none"
                                 />
                                 <span className="bg-colorTem"></span>
                                 <BsExclamationLg className="exclamation" />
                                 <BsPatchCheckFill className="checkCircle" />
                             </div>
-                        </div>
-                    </Fade>
+                        </Fade>
+                        <Fade direction="left" className="flex justify-end">
+                            <button
+                                type="submit"
+                                className="animation__fadeInBackwards relative mx-0 my-[30px] block h-[50px] w-full max-w-[200px] whitespace-nowrap leading-[50px]"
+                            >
+                                <div className="border__radius group relative h-full w-full overflow-hidden">
+                                    <span className="transform__skew group-hover:border__radius absolute -left-[5%] top-0 h-full w-0 group-hover:w-[110%] group-hover:bg-colorTem " />
+                                    <span className="border__radius absolute left-0 top-0 h-full w-full border-[1px] border-solid border-colorTem" />
+                                    <span className="absolute left-0 flex h-full w-full items-center justify-center text-center hover:text-[#2d2b2b]">
+                                        <RiSendPlane2Fill className="mr-2" />
+                                        <span>Gửi tin nhắn</span>
+                                    </span>
+                                </div>
+                            </button>
+                        </Fade>
+                    </div>
                     <Fade direction="bottom">
-                        <div className="form-input-group">
-                            <input
-                                autoComplete="false"
-                                type="text"
-                                placeholder="Subject"
-                                name="user_subject"
-                                value={validInput.subject}
-                                onChange={handleChange}
-                            />
-                            <span className="bg-colorTem"></span>
-                            <BsExclamationLg className="exclamation" />
-                            <BsPatchCheckFill className="checkCircle" />
-                        </div>
+                        <footer className="footer">
+                            <p>
+                                {' '}
+                                &copy; copyright All Right Reserved Almarex -
+                                2022
+                            </p>
+                        </footer>
                     </Fade>
-                    <Fade direction="bottom">
-                        <div className="form-input-group">
-                            <textarea
-                                id="messageArea"
-                                autoComplete="false"
-                                ref={TextAreaRef}
-                                placeholder="Message"
-                                name="message"
-                                value={validInput.message}
-                                onChange={handleChange}
-                                className="mb-[10px] h-[25vh] w-full border-none bg-[#2b2b2b] fill-[#8d8d8d] px-[20px] py-[10px] text-sm shadow-shadowCustom2 outline-none"
-                            />
-                            <span className="bg-colorTem"></span>
-                            <BsExclamationLg className="exclamation" />
-                            <BsPatchCheckFill className="checkCircle" />
-                        </div>
-                    </Fade>
-                    <Fade direction="left" className="flex justify-end">
-                        <button
-                            type="submit"
-                            className="animation__fadeInBackwards relative mx-0 my-[30px] block h-[50px] w-full max-w-[200px] whitespace-nowrap leading-[50px]"
-                        >
-                            <div className="border__radius group relative h-full w-full overflow-hidden">
-                                <span className="transform__skew group-hover:border__radius absolute -left-[5%] top-0 h-full w-0 group-hover:w-[110%] group-hover:bg-colorTem " />
-                                <span className="border__radius absolute left-0 top-0 h-full w-full border-[1px] border-solid border-colorTem" />
-                                <span className="absolute left-0 flex h-full w-full items-center justify-center text-center hover:text-[#2d2b2b]">
-                                    <RiSendPlane2Fill className="mr-2" />
-                                    <span>Gửi tin nhắn</span>
-                                </span>
-                            </div>
-                        </button>
-                    </Fade>
+                </form>
+                <div className="google-map">
+                    <Map />
                 </div>
-                <Fade direction="bottom">
-                    <footer className="footer">
-                        <p>
-                            {' '}
-                            &copy; copyright All Right Reserved Almarex - 2022
-                        </p>
-                    </footer>
-                </Fade>
-            </form>
-            <div className="google-map">
-                <Map />
-            </div>
-        </section>
+            </section>
+        </>
     );
 }
 

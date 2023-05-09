@@ -31,6 +31,7 @@
         "gray-matter": "^4.0.3",
         "gsap": "^3.11.5",
         "gsap-trial": "^3.11.5",
+        "hamburger-react": "^2.5.0",
         "is-hotkey": "^0.2.0",
         "leaflet": "^1.9.3",
         "lodash": "^4.17.21",

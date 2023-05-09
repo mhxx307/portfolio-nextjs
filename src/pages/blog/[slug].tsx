@@ -42,7 +42,7 @@ function BlogDetail({ post, relatedPosts }: Props) {
             <div className="grid grid-cols-12 gap-4">
                 <div className="col-span-1"></div>
                 <div className="col-span-12 border-l-[1px] border-r-[1px] border-t-[2px] border-solid border-[#3c3b3b] border-t-[#E4EE89] px-10 py-12 md:col-span-8">
-                    <h1 className="relative mb-14 font-helvetica text-6xl font-bold text-[#5a6072] before:absolute before:left-[-2rem] before:mt-[-1rem] before:font-belle before:text-[18px] before:text-[#515152] before:content-['<h1>'] after:absolute after:left-[-2rem] after:top-32 after:font-belle after:text-[18px] after:text-[#515152]  after:content-['<h1>'] dark:text-white">
+                    <h1 className="relative mb-14 font-helvetica text-2xl font-bold text-[#5a6072] before:absolute before:left-[-2rem] before:mt-[-1rem] before:font-belle before:text-[18px] before:text-[#515152] before:content-['<h1>'] after:absolute after:left-[-2rem] after:top-32 after:font-belle after:text-[18px] after:text-[#515152] after:content-['<h1>'] dark:text-white ss:text-3xl  sm:text-4xl md:text-6xl">
                         {post.title}
                     </h1>
                     <Image
@@ -60,13 +60,13 @@ function BlogDetail({ post, relatedPosts }: Props) {
                 </div>
                 <div className="hidden md:col-span-3 md:block">
                     <div>
-                        <h2 className="text-white">Thể loại:</h2>
+                        <h2 className="">Thể loại:</h2>
                         <ul className="pl-6">
                             {categories.map((tag) => (
                                 <li key={tag} className="list-disc">
                                     <Link
                                         href={tag}
-                                        className="text-colorTem hover:underline"
+                                        className="text-black hover:underline dark:text-[#868e9a]"
                                     >
                                         {tag}
                                     </Link>
@@ -75,13 +75,13 @@ function BlogDetail({ post, relatedPosts }: Props) {
                         </ul>
                     </div>
                     <div className="mt-12">
-                        <h2 className="text-white">Tag:</h2>
+                        <h2 className="">Tag:</h2>
                         <ul className="pl-6">
                             {post.tags.map((tag) => (
                                 <li key={tag} className="list-disc">
                                     <Link
                                         href={tag}
-                                        className="text-colorTem hover:underline"
+                                        className="text-black hover:underline dark:text-[#868e9a]"
                                     >
                                         {tag}
                                     </Link>
@@ -91,14 +91,14 @@ function BlogDetail({ post, relatedPosts }: Props) {
                     </div>
 
                     <div className="mt-12">
-                        <h2 className="text-white">Bài viết liên quan:</h2>
+                        <h2 className="">Bài viết liên quan:</h2>
                         <ul className="pl-6">
                             {relatedPosts &&
                                 relatedPosts.map((post) => (
                                     <li key={post.id} className="list-disc">
                                         <Link
                                             href={post.slug}
-                                            className="text-colorTem hover:underline"
+                                            className="text-black hover:underline dark:text-[#868e9a]"
                                         >
                                             {post.title}
                                         </Link>
