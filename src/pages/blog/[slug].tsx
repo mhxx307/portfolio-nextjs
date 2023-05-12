@@ -1,7 +1,7 @@
 import { BaseLayout } from '@/components/layouts';
 import { Post } from '@/types/post';
 import { getPostList } from '@/utils/post';
-import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from 'next';
+import { GetStaticProps, GetStaticPropsContext } from 'next';
 import { unified } from 'unified';
 import remarkParse from 'remark-parse';
 import remarkRehype from 'remark-rehype';
@@ -124,10 +124,16 @@ function BlogDetail({ post, relatedPosts }: Props) {
 
 export default BlogDetail;
 
-export const getStaticPaths: GetStaticPaths = async () => {
+export const getStaticPaths = async ({ locales }: { locales: string[] }) => {
     const postList = await getPostList();
     return {
-        paths: postList.map((post) => ({ params: { slug: post.slug } })),
+        paths: postList
+            .map((post) => {
+                return locales.map((locale) => {
+                    return { params: { slug: post.slug }, locale };
+                });
+            })
+            .flat(),
         fallback: false,
     };
 };

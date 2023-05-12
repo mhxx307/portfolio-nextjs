@@ -1,13 +1,36 @@
-import { memo } from 'react';
+import { memo, useMemo } from 'react';
 import { FiSettings } from 'react-icons/fi';
 import { BsMoonStars, BsFillSunFill } from 'react-icons/bs';
 import { BsXLg } from 'react-icons/bs';
 import { useAppContext } from '@/contexts/app.context';
 import classNames from 'classnames';
+import nookies from 'nookies';
+import locales from '@/locales.json';
+import { useRouter } from 'next/router';
 
 const ThemeTemplate = () => {
     const { isTemplateOpen, openTemplate, closeTemplate, setIsOn, isOn } =
         useAppContext();
+
+    const router = useRouter();
+
+    const handleChangeLanguage = (lang: string) => () => {
+        if (router.locale === lang) return;
+
+        const { pathname, asPath, query } = router;
+
+        router.replace({ pathname, query }, asPath, {
+            locale: lang,
+            shallow: true,
+        });
+
+        nookies.set(null, 'NEXT_LOCALE', lang, { path: '/' });
+    };
+
+    const currentLocale = useMemo(
+        () => locales.find(({ locale }) => router.locale === locale),
+        [router.locale],
+    );
 
     return (
         <>
@@ -69,26 +92,19 @@ const ThemeTemplate = () => {
                 </div>
 
                 <div className="flex items-center justify-center space-x-4 pb-[60px]">
-                    <button
-                        className={`group rounded-md p-2 text-[12px] shadow-shadowCustom ${
-                            !isOn
-                                ? 'border-[1px] border-solid border-colorTem'
-                                : ''
-                        }`}
-                        onClick={() => setIsOn(false)}
-                    >
-                        EN
-                    </button>
-                    <button
-                        className={`group rounded-md p-2 text-[12px] shadow-shadowCustom ${
-                            isOn
-                                ? 'border-[1px] border-solid border-colorTem'
-                                : ''
-                        }`}
-                        onClick={() => setIsOn(true)}
-                    >
-                        VN
-                    </button>
+                    {locales.map(({ locale, name }) => (
+                        <button
+                            key={locale}
+                            onClick={handleChangeLanguage(locale)}
+                            className={`group rounded-md p-5 text-[12px] shadow-shadowCustom ${
+                                currentLocale?.name === name
+                                    ? 'border-[1px] border-solid border-colorTem'
+                                    : ''
+                            }`}
+                        >
+                            {name}
+                        </button>
+                    ))}
                 </div>
             </div>
         </>

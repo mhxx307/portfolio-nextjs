@@ -1,7 +1,10 @@
 import { Fade, Head, TextSpan } from '@/components/shared';
 import { SkillCards } from '@/features/about';
+import { useTranslation } from 'react-i18next';
 
 function About() {
+    const { t } = useTranslation('about');
+
     return (
         <>
             <Head
@@ -22,50 +25,16 @@ function About() {
                             />
                         </h2>
                         <Fade direction="bottom">
-                            <p className="mt-8">
-                                {/* I’m an ambitious Front-End Developer who is
-                                passionate about coding and looking for a role in
-                                the established IT company with the opportunity to
-                                work with the latest technologies on challenging and
-                                diverse projects. */}
-                                Tôi là một lập trình viên Front-End, đang tìm
-                                kiếm một vị trí trong một công ty IT có uy tín
-                                với cơ hội làm việc với các công nghệ mới nhất
-                                trên các dự án đa dạng và thách thức.
-                            </p>
+                            <p className="mt-8">{t('about1')}</p>
                         </Fade>
                         <Fade direction="bottom">
-                            <p>
-                                {/* I’m a freelancer who loves building cool UI effects,
-                                dynamic webpages with amazing animations and
-                                creating intuitive, dynamic user experiences. I also
-                                love to reach out to new opportunities accross the
-                                globe that will enhance my skills and get the
-                                opporutinity to work with other programmers as well */}
-                                Tôi là một freelancer yêu thích xây dựng các
-                                trang web và ứng dụng di động. Ngoài ra tôi còn
-                                thích chỉnh sửa video và hình ảnh.
-                            </p>
+                            <p>{t('about2')}</p>
                         </Fade>
                         <Fade direction="bottom">
-                            <p>
-                                Tôi là sinh viên năm 4 của trường đại học công
-                                nghiệp Thành Phố Hồ Chí Minh, chuyên ngành kĩ
-                                thuật phần mềm chất lượng cao. Tôi đã có nhiều
-                                dự án cá nhân trong quá trình học tập và làm
-                                việc. Tôi có thể làm việc độc lập và làm việc
-                                nhóm tốt.
-                            </p>
+                            <p>{t('about3')}</p>
                         </Fade>
                         <Fade direction="bottom">
-                            <p>
-                                {/* If I could say one of the most interesting things
-                                about me, it is the fact that I am always ready for
-                                any challenges that comes to my way. Here is my CV
-                                below for more details. */}
-                                Đây là CV của tôi bên dưới để biết thêm chi
-                                tiết.
-                            </p>
+                            <p>{t('cv')}</p>
                         </Fade>
                         <Fade direction="left">
                             <a
@@ -77,47 +46,42 @@ function About() {
                                     <span className="transform__skew group-hover:border__radius absolute -left-[5%] top-0 h-full w-0 group-hover:w-[110%] group-hover:bg-colorTem " />
                                     <span className="border__radius absolute left-0 top-0 h-full w-full border-[1px] border-solid border-colorTem" />
                                     <span className="absolute left-0 h-full w-full text-center hover:text-[#2d2b2b]">
-                                        Tải xuống CV
+                                        {t('download')}
                                     </span>
                                 </div>
                             </a>
                         </Fade>
 
                         <Fade direction="bottom" className="mt-12">
-                            <h2>🥇🥇Giải thưởng:</h2>
-                            <p>
-                                - Học bổng toàn phần học kỳ 2 năm học 2021 -
-                                2022
-                            </p>
+                            <h2>🥇🥇{t('prize')}:</h2>
+                            <p>- {t('prize_content')}</p>
                         </Fade>
 
                         <Fade direction="bottom" className="mt-12">
-                            <h2>🥇📚Giáo dục:</h2>
+                            <h2>🥇📚{t('education')}:</h2>
                             <p className="text-black dark:text-anchor">
                                 -{' '}
                                 <strong className="text-white">
-                                    Trường đại học Công Nghiệp Thành Phố Hồ Chí
-                                    Minh
+                                    {t('education1')}
                                 </strong>{' '}
-                                - chuyên ngành kĩ thuật phần mềm, 2019 - 2023
+                                - {t('education2')}
                             </p>
                         </Fade>
 
                         <Fade direction="bottom" className="mt-12">
-                            <h2>🥇💋Ngôn ngữ:</h2>
-                            <p>- Tiếng Anh</p>
+                            <h2>🥇💋{t('language')}:</h2>
+                            <p>- {t('english')}</p>
                             <p className="text-black dark:text-anchor">
-                                Đọc hiểu các tài liệu chuyên ngành. Giao tiếp
-                                trung bình.
+                                {t('english_content')}
                             </p>
-                            <p>- Tiếng Việt</p>
+                            <p>- {t('vietnam')}</p>
                             <p className="text-black dark:text-anchor">
-                                Người bản ngữ.
+                                {t('vietnam_content')}
                             </p>
                         </Fade>
 
                         <Fade direction="bottom" className="mt-12">
-                            <h2>🥇☎️Thông tin liên hệ</h2>
+                            <h2>🥇☎️{t('contact')}</h2>
                             <p>
                                 - 📞Phone:{' '}
                                 <span className="text-black dark:text-white">
@@ -137,18 +101,15 @@ function About() {
 
                 {/* programming language cards */}
                 <Fade direction="bottom" className="mt-14">
-                    <h2>🥇🔧Kỹ năng</h2>
-                    <p>Tôi có thể làm việc với các kĩ năng sau:</p>
+                    <h2>🥇🔧{t('skill')}</h2>
+                    <p>{t('skill_content')}</p>
                 </Fade>
                 <Fade direction="bottom" className="mt-14">
                     <h3 className="text-xl text-black dark:text-white">
-                        🥈🔠Ngôn ngữ lập trình
+                        🥈🔠{t('program_language')}
                     </h3>
                     <p>- Javascript, TypeScript, Java, C/C++, Python.</p>
-                    <p>
-                        - Tôi khá là tự tin rằng mình có thể học nhanh các ngôn
-                        ngữ khác khi cần thiết.
-                    </p>
+                    <p>- {t('skill_confident')}</p>
                 </Fade>
                 <Fade direction="bottom" className="mt-12">
                     <h3 className="text-xl text-black dark:text-white">

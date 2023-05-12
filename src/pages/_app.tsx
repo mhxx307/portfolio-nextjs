@@ -3,6 +3,8 @@ import '@/styles/contact.scss';
 import 'react-toastify/dist/ReactToastify.css';
 import '@/styles/prism.css';
 
+import nextI18nextConfig from '../../next-i18next.config';
+import { appWithTranslation } from 'next-i18next';
 import { Fragment, useState } from 'react';
 import { ErrorBoundary } from 'react-error-boundary';
 import { AppPropsWithLayout } from '@/types/layout.type';
@@ -11,7 +13,7 @@ import { AppErrorFallback } from '@/components/shared';
 import { BaseLayout } from '@/components/layouts';
 import { AppProvider } from '@/contexts/app.context';
 
-export default function App({ Component, pageProps }: AppPropsWithLayout) {
+function App({ Component, pageProps }: AppPropsWithLayout) {
     const [errorInfo, setErrorInfo] = useState<React.ErrorInfo | null>(null);
 
     const Layout =
@@ -50,3 +52,5 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
         </Fragment>
     );
 }
+
+export default appWithTranslation(App, nextI18nextConfig);
