@@ -80,36 +80,36 @@ export const projects = [
         },
         imgUrl: '/images/reddit.png',
     },
-    // {
-    //     id: 6,
-    //     name: 'Huddle Landing Page',
-    //     desc: 'A simple landing page website',
-    //     stack: 'React js, SCSS',
-    //     gitHubUrl: {
-    //         icon: AiOutlineGithub,
-    //         url: 'https://github.com/Almarex-Web-Dev/Huddle-landing-page',
-    //     },
-    //     website: {
-    //         icon: TbWorld,
-    //         url: 'https://huddle-website-project.netlify.app/',
-    //     },
-    //     imgUrl: huddle,
-    // },
-    // {
-    //     id: 7,
-    //     name: 'Hotel Booking Project',
-    //     desc: 'A complicated project that enhanced my skills a lot',
-    //     stack: 'React JS',
-    //     gitHubUrl: {
-    //         icon: AiOutlineGithub,
-    //         url: 'https://github.com/Almarex-Web-Dev/React-booking-project',
-    //     },
-    //     website: {
-    //         icon: TbWorld,
-    //         url: 'https://react-booking-project.netlify.app/',
-    //     },
-    //     imgUrl: 'https://cdn.dribbble.com/userupload/2512424/file/original-03f9f265f9a4adbd54644841930518a1.png?compress=1&resize=320x240&vertical=top',
-    // },
+    {
+        id: 6,
+        name: 'Shopee clone',
+        desc: 'Clone a famous e-commerce website',
+        stack: 'React js, typescript, tailwind css',
+        gitHubUrl: {
+            icon: AiOutlineGithub,
+            url: 'https://github.com/mhxx307/shopee-clone',
+        },
+        website: {
+            icon: TbWorld,
+            url: 'https://shopee-clone-five.vercel.app/',
+        },
+        imgUrl: '/images/shopee.png',
+    },
+    {
+        id: 7,
+        name: 'Second-hand website',
+        desc: 'A complicated project that enhanced my skills a lot',
+        stack: 'Next JS, TypeScript, Tailwind CSS, Supabase, Vercel',
+        gitHubUrl: {
+            icon: AiOutlineGithub,
+            url: 'https://github.com/mhxx307/swap-shop',
+        },
+        website: {
+            icon: TbWorld,
+            url: 'https://secondchance.vercel.app/',
+        },
+        imgUrl: '/images/market.png',
+    },
     // {
     //     id: 8,
     //     name: 'Restaurant Website',
