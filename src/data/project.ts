@@ -110,6 +110,21 @@ export const projects = [
         },
         imgUrl: '/images/market.png',
     },
+    {
+        id: 8,
+        name: 'Modern bank website',
+        desc: 'Cut html from figma',
+        stack: 'Reactjs, tailwindcss',
+        gitHubUrl: {
+            icon: AiOutlineGithub,
+            url: 'https://github.com/mhxx307/swap-shop',
+        },
+        website: {
+            icon: TbWorld,
+            url: 'https://github.com/mhxx307/bank-modern-app',
+        },
+        imgUrl: '/images/bank.png',
+    },
     // {
     //     id: 8,
     //     name: 'Restaurant Website',
